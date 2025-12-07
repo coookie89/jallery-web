@@ -4,6 +4,7 @@ import Button from '../../components/common/Button';
 import Input from '../../components/common/Input';
 import ListingGrid from '../../components/listing/ListingGrid';
 import { PaintingType } from '../../types/listing.types';
+import { Search } from 'lucide-react';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const Home: React.FC = () => {
       bedrooms: 2,
       bathrooms: 1,
       amenities: ['WiFi', 'Kitchen', 'TV'],
-      images: ['https://via.placeholder.com/400x300'],
+      images: ['./resources/painting/IMG_3425.heic'],
       host: {
         id: 'h1',
         name: 'John Doe',
@@ -60,7 +61,142 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['https://via.placeholder.com/400x300'],
+      images: ['./resources/painting/IMG_3426.heic'],
+      host: {
+        id: 'h2',
+        name: 'Jane Smith',
+        avatar: '',
+        joinedDate: '2022-06-15',
+        isSuperhost: false
+      },
+      rating: 4.9,
+      reviewCount: 85
+    },
+    {
+      id: '3',
+      title: 'Mountain Cabin Retreat',
+      description: 'A cozy cabin in the mountains, perfect for a weekend getaway',
+      paintingType: PaintingType.OilPaints as const,
+      location: {
+        address: '456 Beach Rd',
+        city: 'Miami',
+        country: 'USA',
+        coordinates: { lat: 25.7617, lng: -80.1918 }
+      },
+      price: 350,
+      maxGuests: 6,
+      bedrooms: 3,
+      bathrooms: 2,
+      amenities: ['WiFi', 'Pool', 'Beach Access'],
+      images: ['./resources/painting/IMG_3425.heic'],
+      host: {
+        id: 'h2',
+        name: 'Jane Smith',
+        avatar: '',
+        joinedDate: '2022-06-15',
+        isSuperhost: false
+      },
+      rating: 4.9,
+      reviewCount: 85
+    },
+    {
+      id: '4',
+      title: 'Mountain Cabin Retreat',
+      description: 'A cozy cabin in the mountains, perfect for a weekend getaway',
+      paintingType: PaintingType.OilPaints as const,
+      location: {
+        address: '456 Beach Rd',
+        city: 'Miami',
+        country: 'USA',
+        coordinates: { lat: 25.7617, lng: -80.1918 }
+      },
+      price: 350,
+      maxGuests: 6,
+      bedrooms: 3,
+      bathrooms: 2,
+      amenities: ['WiFi', 'Pool', 'Beach Access'],
+      images: ['./resources/painting/IMG_3426.heic'],
+      host: {
+        id: 'h2',
+        name: 'Jane Smith',
+        avatar: '',
+        joinedDate: '2022-06-15',
+        isSuperhost: false
+      },
+      rating: 4.9,
+      reviewCount: 85
+    },
+    {
+      id: '5',
+      title: 'Mountain Cabin Retreat',
+      description: 'A cozy cabin in the mountains, perfect for a weekend getaway',
+      paintingType: PaintingType.OilPaints as const,
+      location: {
+        address: '456 Beach Rd',
+        city: 'Miami',
+        country: 'USA',
+        coordinates: { lat: 25.7617, lng: -80.1918 }
+      },
+      price: 350,
+      maxGuests: 6,
+      bedrooms: 3,
+      bathrooms: 2,
+      amenities: ['WiFi', 'Pool', 'Beach Access'],
+      images: ['./resources/painting/IMG_3425.heic'],
+      host: {
+        id: 'h2',
+        name: 'Jane Smith',
+        avatar: '',
+        joinedDate: '2022-06-15',
+        isSuperhost: false
+      },
+      rating: 4.9,
+      reviewCount: 85
+    },
+    {
+      id: '6',
+      title: 'Mountain Cabin Retreat',
+      description: 'A cozy cabin in the mountains, perfect for a weekend getaway',
+      paintingType: PaintingType.OilPaints as const,
+      location: {
+        address: '456 Beach Rd',
+        city: 'Miami',
+        country: 'USA',
+        coordinates: { lat: 25.7617, lng: -80.1918 }
+      },
+      price: 350,
+      maxGuests: 6,
+      bedrooms: 3,
+      bathrooms: 2,
+      amenities: ['WiFi', 'Pool', 'Beach Access'],
+      images: ['./resources/painting/IMG_3426.heic'],
+      host: {
+        id: 'h2',
+        name: 'Jane Smith',
+        avatar: '',
+        joinedDate: '2022-06-15',
+        isSuperhost: false
+      },
+      rating: 4.9,
+      reviewCount: 85
+    },
+    {
+      id: '7',
+      title: 'Mountain Cabin Retreat',
+      description: 'A cozy cabin in the mountains, perfect for a weekend getaway',
+      paintingType: PaintingType.OilPaints as const,
+      location: {
+        address: '456 Beach Rd',
+        city: 'Miami',
+        country: 'USA',
+        coordinates: { lat: 25.7617, lng: -80.1918 }
+      },
+      price: 350,
+      maxGuests: 6,
+      bedrooms: 3,
+      bathrooms: 2,
+      amenities: ['WiFi', 'Pool', 'Beach Access'],
+      images: ['./resources/painting/IMG_3425.heic'],
       host: {
         id: 'h2',
         name: 'Jane Smith',
@@ -76,47 +212,43 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative h-96 bg-gradient-to-r from-primary to-pink-600">
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-          <h1 className="text-5xl font-bold mb-4">Find your next stay</h1>
-          <p className="text-xl mb-8">Search deals on hotels, homes, and much more...</p>
-          
+      <div className="relative h-40 bg-gradient-to-r from-primary to-pink-600">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
           {/* Search Bar */}
-          <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg p-4">
-            <div className="flex gap-4">
+          <div className="w-full max-w-2xl bg-white rounded-full shadow-lg p-2">
+            <div className="flex gap-2">
               <Input
-                placeholder="Where are you going?"
+                placeholder="Where are you looking for?"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 className="flex-1"
               />
-              <Button onClick={handleSearch}>Search</Button>
+              <Button onClick={handleSearch} aria-label="Search">
+                <Search className="w-5 h-5" />
+              </Button>
             </div>
           </div>
+
+          {/* Categories */}
+                <div className="mt-2 flex gap-6 overflow-x-auto">
+                {Object.values(PaintingType).map((type) => (
+                    <span
+                        key={type}
+                        className="cursor-pointer hover:text-white hover:underline transition text-sm whitespace-nowrap flex flex-col items-center"
+                    >
+                        {type}
+                    </span>
+                ))}
+                </div>
         </div>
       </div>
 
       {/* Featured Listings */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-3xl font-bold mb-8">Featured Stays</h2>
+      <div className="mx-auto px-4 sm:px-8 lg:px-12 py-12">
+        <h2 className="text-2xl font-bold mb-8">All paintings</h2>
         <ListingGrid listings={featuredListings} />
       </div>
 
-      {/* Categories */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-3xl font-bold mb-8">Explore by Painting Type</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {Object.values(PaintingType).map((type) => (
-            <div
-              key={type}
-              className="bg-white rounded-lg shadow-md p-6 text-center cursor-pointer hover:shadow-lg transition"
-            >
-              <div className="text-4xl mb-2">🏠</div>
-              <h3 className="font-semibold">{type}</h3>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };

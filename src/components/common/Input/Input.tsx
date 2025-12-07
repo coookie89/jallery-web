@@ -31,7 +31,7 @@ const Input: React.FC<InputProps> = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
+        className={`px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-primary ${
           error ? 'border-red-500' : 'border-gray-300'
         }`}
       />

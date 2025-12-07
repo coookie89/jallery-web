@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Button from '../../components/common/Button';
 import { Listing, PaintingType } from '../../types/listing.types';
+import { Star, Check } from 'lucide-react';
 
 const ListingDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -58,7 +59,7 @@ const ListingDetails: React.FC = () => {
         <h1 className="text-3xl font-bold mb-2">{listing.title}</h1>
         <div className="flex items-center gap-4 mb-6">
           <span className="flex items-center">
-            ⭐ {listing.rating} · {listing.reviewCount} reviews
+            <Star className="w-4 h-4 text-yellow-500 mr-1" /> {listing.rating} · {listing.reviewCount} reviews
           </span>
           <span className="text-gray-600">
             {listing.location.city}, {listing.location.country}
@@ -98,8 +99,8 @@ const ListingDetails: React.FC = () => {
                 {listing.maxGuests} guests · {listing.bedrooms} bedrooms · {listing.bathrooms} bathrooms
               </p>
               {listing.host.isSuperhost && (
-                <span className="inline-block bg-red-100 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                  ⭐ Superhost
+                <span className="inline-flex items-center bg-red-100 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                  <Star className="w-4 h-4 text-primary mr-2" /> Superhost
                 </span>
               )}
             </div>
@@ -116,7 +117,7 @@ const ListingDetails: React.FC = () => {
               <div className="grid grid-cols-2 gap-4">
                 {listing.amenities.map((amenity) => (
                   <div key={amenity} className="flex items-center">
-                    <span className="mr-2">✓</span>
+                    <Check className="w-4 h-4 text-green-500 mr-2" />
                     <span>{amenity}</span>
                   </div>
                 ))}

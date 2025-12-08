@@ -2,13 +2,18 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../../common/Card';
 import { Listing } from '../../../types/listing.types';
-import { Star } from 'lucide-react';
+// lucide icons were previously used for ratings; keep import commented out until needed
 
 interface ListingCardProps {
   listing: Listing;
+  /**
+   * When true, render the card in a vertical (column) layout suitable for
+   * full-width/odd-row cards. Defaults to false.
+   */
+  vertical?: boolean;
 }
 
-const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
+const ListingCard: React.FC<ListingCardProps> = ({ listing, vertical = false }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -16,10 +21,13 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
   };
 
   return (
-    // Fixed-height card so all cards in a row have equal height
-    <Card onClick={handleClick} className="overflow-hidden border border-black hover:bg-gray-300 duration-300 flex flex-col">
-      {/* Image area: fixed height, image preserves original ratio via object-contain */}
-      <div className="w-full bg-gray-100 overflow-hidden flex items-center justify-center ">
+    // Card switches between column (default) and row when not vertical.
+    <Card
+      onClick={handleClick}
+      className={`h-full overflow-hidden border border-black hover:bg-gray-300 duration-300 flex ${vertical ? 'flex-row' : 'flex-col'}`}
+    >
+      {/* Image */}
+      <div className={`w-full bg-gray-100 overflow-hidden flex items-center justify-center ${vertical ? 'flex-1' : ''}`}>
         {listing.images && listing.images.length > 0 ? (
           <img
             src={listing.images[0]}
@@ -37,7 +45,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
           <div className="flex justify-between items-start">
-            <h3 className="font-semibold text-lg line-clamp-1 text-black">{listing.author?.name || listing.title}</h3>
+            <h3 className="font-bold text-2xl line-clamp-1 text-black tracking-tight">{listing.title}</h3>
             {/* {listing.rating > 0 && (
               <div className="flex items-center">
                 <Star className="w-4 h-4 text-yellow-300 mr-1" />
@@ -46,14 +54,17 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing }) => {
             )} */}
           </div>
 
-          <p className="text-black text-sm mt-2">
+          <p className="text-black text-md mt-2 tracking-tight">
+            {listing.description}
+          </p>
+
+          <p className="text-black text-sm mt-2 tracking-tight">
             {listing.paintingType} · {listing.location.city}, {listing.location.country}
           </p>
         </div>
 
         <div className="flex justify-between items-center text-black text-sm mt-4">
           <div>
-            {/* <span className="font-bold text-lg">${listing.price}</span> */}
             <span className="text-gray-600 uppercase text-xs">Read more</span>
           </div>
         </div>

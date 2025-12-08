@@ -34,7 +34,7 @@ const Home: React.FC = () => {
       bedrooms: 2,
       bathrooms: 1,
       amenities: ['WiFi', 'Kitchen', 'TV'],
-      images: ['./resources/painting/IMG_3426.heic'],
+      images: ['./resources/painting/IMG_3426.jpg'],
       author: {
         id: 'h1',
         name: 'John Doe',
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3425.heic'],
+      images: ['./resources/painting/IMG_3425.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3426.heic'],
+      images: ['./resources/painting/IMG_3426.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -142,7 +142,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3425.heic'],
+      images: ['./resources/painting/IMG_3425.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -169,7 +169,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3426.heic'],
+      images: ['./resources/painting/IMG_3426.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -196,7 +196,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3425.heic'],
+      images: ['./resources/painting/IMG_3425.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -210,10 +210,23 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" id="header">
       {/* Featured Listings */}
       <div className="mx-auto py-12">
-        <h2 className="text-6xl font-bold mb-8 text-black px-4 sm:px-8 lg:px-12">Artworks</h2>
+        <div className=' px-4 sm:px-8 lg:px-12 mb-8'>
+          <h2 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-black">Artworks</h2>
+          <div className='text-sm sm:text-sm lg:text-md mb-8'>
+            Painting types
+            <div className='flex flex-wrap gap-4 mt-4'>
+              <span className='px-3 py-1 border'>Oil paints</span>
+              <span className='px-3 py-1 border'>Acrylic paint</span>
+              <span className='px-3 py-1 border'>Watercolour</span>
+              <span className='px-3 py-1 border'>Other</span>
+            </div>
+            
+          </div>
+        </div>
+        
         <ListingGrid listings={featuredListings} />
       </div>
 

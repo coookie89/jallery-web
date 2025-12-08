@@ -11,12 +11,6 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
   const [location, setLocation] = useState('');
 
-  const handleSearch = () => {
-    if (location.trim()) {
-      navigate(`/search?location=${encodeURIComponent(location)}`);
-    }
-  };
-
   // Mock featured listings - in real app, fetch from API
   const featuredListings = [
     {
@@ -35,7 +29,7 @@ const Home: React.FC = () => {
       bedrooms: 2,
       bathrooms: 1,
       amenities: ['WiFi', 'Kitchen', 'TV'],
-      images: ['./resources/painting/IMG_3425.heic'],
+      images: ['./resources/painting/IMG_3425.jpg'],
       author: {
         id: 'h1',
         name: 'John Doe',
@@ -62,7 +56,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3426.heic'],
+      images: ['./resources/painting/IMG_3426.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -116,7 +110,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3426.heic'],
+      images: ['./resources/painting/IMG_3426.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -143,7 +137,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3425.heic'],
+      images: ['./resources/painting/IMG_3425.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -170,7 +164,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3426.heic'],
+      images: ['./resources/painting/IMG_3426.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -197,7 +191,7 @@ const Home: React.FC = () => {
       bedrooms: 3,
       bathrooms: 2,
       amenities: ['WiFi', 'Pool', 'Beach Access'],
-      images: ['./resources/painting/IMG_3425.heic'],
+      images: ['./resources/painting/IMG_3425.jpg'],
       author: {
         id: 'h2',
         name: 'Jane Smith',
@@ -213,21 +207,21 @@ const Home: React.FC = () => {
   return (
     <div>
 
-    <div className="h-screen overflow-hidden">
-      <div
-        className="w-full h-full relative bg-center bg-cover"
-        style={{ backgroundImage: `url('./resources/img/cover.jpg')` }}
-      >
-        <div className="absolute inset-0 bg-black/20"/>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-6xl md:text-9xl font-bold text-white text-center drop-shadow-lg">
-            程瓊慧
-            <span className="block text-5xl md:text-7xl mt-6">Joan Chen</span>
-          </h1>
+      <div className="h-screen overflow-hidden">
+        <div
+          className="w-full h-full relative bg-center bg-cover"
+          style={{ backgroundImage: `url('./resources/img/cover.jpg')` }}
+        >
+          <div className="absolute inset-0 bg-black/20"/>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h1 className="text-6xl md:text-9xl font-bold text-white text-center drop-shadow-lg"  id="home-hero-text">
+              程瓊慧
+              <span className="block text-5xl md:text-7xl mt-6">Joan Chen</span>
+            </h1>
+          </div>
         </div>
-      </div>
 
-    </div>
+      </div>
       <Artworks />
 
     </div>

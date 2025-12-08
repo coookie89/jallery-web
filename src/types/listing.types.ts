@@ -8,7 +8,7 @@ export interface Location {
   };
 }
 
-export interface Host {
+export interface Author {
   id: string;
   name: string;
   avatar: string;
@@ -28,7 +28,7 @@ export interface Listing {
   bathrooms: number;
   amenities: string[];
   images: string[];
-  host: Host;
+  author: Author;
   rating: number;
   reviewCount: number;
 }

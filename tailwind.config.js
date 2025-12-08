@@ -6,9 +6,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#FF385C',
-        secondary: '#00A699',
+        primary: '#FF5700',
+        secondary: '#A3CAFF',
+        red: '#FF5700',
+        blue: '#A3CAFF',
+        green: '#00B140',
       },
+    },
+    fontFamily: {
+      sans: [
+        '"Inter var", sans-serif',
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
     },
   },
   plugins: [],

@@ -34,7 +34,7 @@ const ListingDetails: React.FC = () => {
         'https://via.placeholder.com/800x600',
         'https://via.placeholder.com/800x600'
       ],
-      host: {
+      author: {
         id: 'h1',
         name: 'John Doe',
         avatar: 'https://via.placeholder.com/100',
@@ -93,12 +93,12 @@ const ListingDetails: React.FC = () => {
             {/* Property Info */}
             <div className="bg-white rounded-lg shadow p-6 mb-6">
               <h2 className="text-2xl font-semibold mb-4">
-                Hosted by {listing.host.name}
+                Hosted by {listing.author.name}
               </h2>
               <p className="text-gray-600 mb-4">
                 {listing.maxGuests} guests · {listing.bedrooms} bedrooms · {listing.bathrooms} bathrooms
               </p>
-              {listing.host.isSuperhost && (
+              {listing.author.isSuperhost && (
                 <span className="inline-flex items-center bg-red-100 text-primary px-3 py-1 rounded-full text-sm font-medium">
                   <Star className="w-4 h-4 text-primary mr-2" /> Superhost
                 </span>

@@ -32,7 +32,7 @@ const SearchResults: React.FC = () => {
         bathrooms: 1,
         amenities: ['WiFi', 'Kitchen', 'TV'],
         images: ['https://via.placeholder.com/400x300'],
-        host: {
+        author: {
           id: 'h1',
           name: 'John Doe',
           avatar: '',
@@ -59,7 +59,7 @@ const SearchResults: React.FC = () => {
         bathrooms: 2,
         amenities: ['WiFi', 'Pool', 'Beach Access'],
         images: ['https://via.placeholder.com/400x300'],
-        host: {
+        author: {
           id: 'h2',
           name: 'Jane Smith',
           avatar: '',

@@ -14,7 +14,7 @@ const ListingGrid: React.FC<ListingGridProps> = ({ listings }) => {
     // sm: 640px -> 2 cols, lg: 1024px -> 3 cols
     const getColsForWidth = (w: number) => {
       if (w >= 1024) return 3;
-      if (w >= 640) return 3;
+      if (w >= 640) return 2;
       return 1;
     };
 

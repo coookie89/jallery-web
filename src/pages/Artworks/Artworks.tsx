@@ -219,7 +219,7 @@ const Home: React.FC = () => {
             Painting types
             <div className='flex flex-wrap gap-4 mt-4'>
               <span className='px-3 py-1 border'>Oil paints</span>
-              <span className='px-3 py-1 border'>Acrylic paint</span>
+              <span className='px-3 py-1 border'>Photograph</span>
               <span className='px-3 py-1 border'>Watercolour</span>
               <span className='px-3 py-1 border'>Other</span>
             </div>

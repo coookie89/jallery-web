@@ -213,11 +213,12 @@ const Home: React.FC = () => {
           style={{ backgroundImage: `url('./resources/img/cover.jpg')` }}
         >
           <div className="absolute inset-0 bg-black/20"/>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-6xl md:text-9xl font-bold text-white text-center drop-shadow-lg"  id="home-hero-text">
+          <div className="absolute inset-0 flex flex-col items-left justify-left place-content-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+            <h1 className="text-6xl md:text-9xl font-bold" id="home-hero-text">
               程瓊慧
-              <span className="block text-5xl md:text-7xl mt-6">Joan Chen</span>
             </h1>
+            <p className="block text-5xl md:text-7xl font-bold">Joan Chen</p>
+            <p className='text-md p-0'>愛拍照愛畫畫討厭煮飯的中年婦女</p>
           </div>
         </div>
 

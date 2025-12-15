@@ -24,10 +24,10 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, vertical = false }) 
     // Card switches between column (default) and row when not vertical.
     <Card
       onClick={handleClick}
-      className={`h-full overflow-hidden border border-black hover:bg-gray-300 duration-300 flex ${vertical ? 'flex-row' : 'flex-col'}`}
+      className={`h-full overflow-hidden border border-black hover:bg-gray-300 duration-300 flex flex-col ${vertical ? 'sm:flex-row lg:flex-row' : ''}`}
     >
       {/* Image */}
-      <div className={`w-full bg-gray-100 overflow-hidden flex items-center justify-center ${vertical ? 'flex-1' : ''}`}>
+      <div className={`bg-gray-100 overflow-hidden items-center justify-center w-full ${vertical ? 'sm:w-1/2 lg:w-1/2 ' : ''}`}>
         {listing.images && listing.images.length > 0 ? (
           <img
             src={listing.images[0]}
@@ -35,14 +35,14 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, vertical = false }) 
             className="w-full h-auto object-contain"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-black">
+          <div className="w-full h-full items-center justify-center text-black">
             No Image
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-4 flex-1 flex flex-col justify-between">
+      <div className={`p-4 flex-1 flex flex-col justify-between`}>
         <div>
           <div className="flex justify-between items-start">
             <h3 className="font-bold text-2xl line-clamp-1 text-black tracking-tight">{listing.title}</h3>

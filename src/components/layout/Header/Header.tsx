@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+// icons imported when needed
 
 const Header: React.FC = () => {
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const checkHeroBottom = () => {
@@ -43,20 +44,20 @@ const Header: React.FC = () => {
             <h1 className="text-2xl font-bold text-primary">Jallery</h1>
           </Link> */}
 
-          {/* Logo text visible only when page is near bottom */}
+          {/* Logo text: visible when on other pages OR when the home hero is scrolled to bottom */}
           <Link
             to="/"
             className={`pointer-events-auto transition-opacity duration-300 ${
-              isAtBottom ? 'opacity-100' : 'opacity-0'
+              location.pathname !== '/' || isAtBottom ? 'opacity-100' : 'opacity-0'
             }`}
-            aria-hidden={!isAtBottom}
+            aria-hidden={location.pathname === '/' && !isAtBottom}
           >
-            <span className="text-2xl font-medium text-white">程瓊慧 Joan Chen</span>
+            <span className="text-2xl font-medium text-black">程瓊慧 Joan Chen</span>
           </Link>
 
           {/* Navigation */}
           <nav className="md:flex items-center space-x-2">
-            <Link to="/" className='bg-red px-3 py-2 hover:bg-white transition duration-800 hover:cursor-pointer rounded-sm'>
+            <Link to="/contact" className='bg-red px-3 py-2 hover:bg-white transition duration-800 hover:cursor-pointer rounded-sm'>
                 Contact
             </Link>
           </nav>

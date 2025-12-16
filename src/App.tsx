@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Artworks from './pages/Artworks';
 import SearchResults from './pages/SearchResults';
 import ListingDetails from './pages/ListingDetails';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/artworks" element={<Artworks />} />
             <Route path="/search" element={<SearchResults />} />
             <Route path="/listing/:id" element={<ListingDetails />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

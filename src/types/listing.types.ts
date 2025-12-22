@@ -30,7 +30,7 @@ export interface Listing {
   images: string[];
   author: Author;
   rating: number;
-  reviewCount: number;
+  year: number;
 }
 
 export enum PaintingType {

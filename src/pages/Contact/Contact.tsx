@@ -1,4 +1,20 @@
+import React, { useState } from 'react';
+
 const Home: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState<string | null>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      setEmailError('Please fill out this field.');
+      return;
+    }
+
+    setEmailError(null);
+    setEmail('');
+  };
+
   return (
     <div className="mx-auto flex justify-center items-center flex-col md:flex-row mt-28 mb-24">
         {/* Image */}
@@ -19,7 +35,7 @@ const Home: React.FC = () => {
             留下你的資料，不久後...你會在你的郵箱裡發現程瓊慧本人的回信！
           </p>
 
-          <form className="w-full max-w-lg">
+          <form className="w-full max-w-lg" onSubmit={handleSubmit} noValidate>
             <div className="flex flex-wrap -mx-3 mb-2">
               <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label
@@ -27,8 +43,10 @@ const Home: React.FC = () => {
                   htmlFor="grid-first-name"
                 >
                   First Name
+                  <span className="text-red text-xs italic">*</span>
                 </label>
                 <input
+                  required
                   className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
                   id="grid-first-name"
                   type="text"
@@ -41,8 +59,10 @@ const Home: React.FC = () => {
                   htmlFor="grid-last-name"
                 >
                   Last Name
+                  <span className="text-red text-xs italic">*</span>
                 </label>
                 <input
+                  required
                   className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
                   id="grid-last-name"
                   type="text"
@@ -58,13 +78,27 @@ const Home: React.FC = () => {
                   htmlFor="grid-email"
                 >
                   Email
+                  <span className="text-red text-xs italic">*</span>
                 </label>
                 <input
-                  className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
+                  name="email"
+                  value={email}
+                  onChange={(ev) => {
+                    setEmail(ev.target.value);
+                    if (emailError) setEmailError(null);
+                  }}
+                  className={`block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border ${emailError ? 'border-red' : 'border-black'}`}
                   id="grid-email"
                   type="email"
                   placeholder="you@example.com"
+                  aria-invalid={emailError ? 'true' : 'false'}
+                  aria-describedby={emailError ? 'grid-email-error' : undefined}
                 />
+                {emailError && (
+                  <p id="grid-email-error" className="text-red text-sm italic">
+                    Please fill out this field.
+                  </p>
+                )}
               </div>
             </div>
 

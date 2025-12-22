@@ -30,9 +30,10 @@ const ListingDetails: React.FC = () => {
       bathrooms: 1,
       amenities: ['WiFi', 'Kitchen', 'TV', 'Air Conditioning', 'Heating', 'Washer', 'Dryer'],
       images: [
-        'https://via.placeholder.com/800x600',
-        'https://via.placeholder.com/800x600',
-        'https://via.placeholder.com/800x600'
+        './resources/painting/IMG_3425.jpg',
+        './resources/painting/IMG_3426.jpg',
+        './resources/painting/IMG_3427.jpg',
+        './resources/painting/S__194322446.jpg'
       ],
       author: {
         id: 'h1',
@@ -42,7 +43,7 @@ const ListingDetails: React.FC = () => {
         isSuperhost: true
       },
       rating: 4.8,
-      reviewCount: 120
+      year: 120
     };
 
     setListing(mockListing);
@@ -53,21 +54,19 @@ const ListingDetails: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Title */}
-        <h1 className="text-3xl font-bold mb-2">{listing.title}</h1>
-        <div className="flex items-center gap-4 mb-6">
-          <span className="flex items-center">
-            <Star className="w-4 h-4 text-yellow-500 mr-1" /> {listing.rating} · {listing.reviewCount} reviews
-          </span>
-          <span className="text-gray-600">
-            {listing.location.city}, {listing.location.country}
-          </span>
+    <div className="min-h-screen bg-gray-50 mt-36">
+      {/* Title */}
+      <div className="mx-auto py-12">
+        <div className=' px-4 sm:px-8 lg:px-12 mb-8 text-center'>
+          <h2 className="text-3xl font-bold mb-8 text-black">Cozy Apartment in Downtown</h2>
+          <div className='text-sm sm:text-sm lg:text-md mb-8'>
+            {listing.paintingType} · {listing.location.city}, {listing.location.country}
+          </div>
         </div>
+      </div>
 
-        {/* Images Gallery */}
-        <div className="grid grid-cols-2 gap-2 mb-8 rounded-lg overflow-hidden">
+      {/* Images Gallery */}
+        <div className="grid grid-cols-2 gap-2 mb-8 overflow-hidden">
           <div className="col-span-2 md:col-span-1">
             <img
               src={listing.images[0]}
@@ -87,6 +86,7 @@ const ListingDetails: React.FC = () => {
           </div>
         </div>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2">

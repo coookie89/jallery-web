@@ -1,0 +1,353 @@
+[
+  {
+    "id": "1",
+    "title": "瀑",
+    "description": "A beautiful apartment in the heart of the city",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "123 Main St",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 40.7128, "lng": -74.006 }
+    },
+    "price": 150,
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": ["WiFi", "Kitchen", "TV"],
+    "images": ["./resources/painting/0BDD4ED6-AC02-49AB-8EF3-CF732204822F.jpg"],
+    "author": {
+      "id": "h1",
+      "name": "John Doe",
+      "avatar": "",
+      "joinedDate": "2023-01-01",
+      "isSuperhost": true
+    },
+    "rating": "15P",
+    "year": 2019
+  },
+  {
+    "id": "2",
+    "title": "憩",
+    "description": "Stunning beach house with panoramic ocean views",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "456 Beach Rd",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 25.7617, "lng": -80.1918 }
+    },
+    "price": 350,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Pool", "Beach Access"],
+    "images": ["./resources/painting/07655740-0C6B-4E86-9F1D-B15B5669DFDA.jpg"],
+    "author": {
+      "id": "h2",
+      "name": "Jane Smith",
+      "avatar": "",
+      "joinedDate": "2022-06-15",
+      "isSuperhost": false
+    },
+    "rating": "6F",
+    "year": 2024
+  },
+  {
+    "id": "3",
+    "title": "馳",
+    "description": "A cozy cabin in the mountains, perfect for a weekend getaway",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "789 Mountain Rd",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.1911, "lng": -106.8175 }
+    },
+    "price": 220,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Fireplace", "Hiking Trails"],
+    "images": ["./resources/painting/E4AA74F2-FAFD-4A2B-AC34-EB86DDC13E89.jpg"],
+    "author": {
+      "id": "h2",
+      "name": "Jane Smith",
+      "avatar": "",
+      "joinedDate": "2022-06-15",
+      "isSuperhost": false
+    },
+    "rating": "15P",
+    "year": 2025
+  },
+  {
+    "id": "4",
+    "title": "滯",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/FADAB43A-30BD-48C7-878B-D1BBC0291A81.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Sam Taylor",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": "10P",
+    "year": 2024
+  },
+  {
+    "id": "5",
+    "title": "閒",
+    "description": "Secluded retreat surrounded by trees",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "987 Forest Ln",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 40.015, "lng": -105.2705 }
+    },
+    "price": 180,
+    "maxGuests": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "amenities": ["WiFi", "Kitchen", "Hiking Trails"],
+    "images": ["./resources/painting/922653DA-A47A-4345-9209-007E694522DC.jpg"],
+    "author": {
+      "id": "h4",
+      "name": "Alex Green",
+      "avatar": "",
+      "joinedDate": "2020-04-10",
+      "isSuperhost": false
+    },
+    "rating": "15P",
+    "year": 2025
+  },
+  {
+    "id": "6",
+    "title": "寵",
+    "description": "Rustic barn conversion with modern amenities",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "654 Country Rd",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 36.1627, "lng": -86.7816 }
+    },
+    "price": 200,
+    "maxGuests": 5,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Kitchen", "Parking"],
+    "images": ["./resources/painting/35A7D820-05D8-495C-B6D2-3DCA09F5A45C.jpg"],
+    "author": {
+      "id": "h5",
+      "name": "Taylor Brown",
+      "avatar": "",
+      "joinedDate": "2019-08-01",
+      "isSuperhost": false
+    },
+    "rating": "8F",
+    "year": 2017
+  },
+  {
+    "id": "7",
+    "title": "夏",
+    "description": "Bright loft perfect for creatives",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "159 Art St",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 47.6062, "lng": -122.3321 }
+    },
+    "price": 260,
+    "maxGuests": 3,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "amenities": ["WiFi", "Workspace", "Kitchen"],
+    "images": ["./resources/painting/7F3ED4F0-1EF0-4BAF-B8F7-F5370AE4A643.jpg"],
+    "author": {
+      "id": "h6",
+      "name": "Morgan Lee",
+      "avatar": "",
+      "joinedDate": "2024-02-05",
+      "isSuperhost": false
+    },
+    "rating": "8P",
+    "year": 2024
+  },
+  {
+    "id": "8",
+    "title": "秋",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/793856A8-9AEC-46FF-B706-9535A776954C.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Sam Taylor",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": "15P",
+    "year": 2023
+  },
+  {
+    "id": "9",
+    "title": "艷",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/3F76F947-7546-463C-A702-5FC2F7925C19.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Sam Taylor",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": "24cm x 31.5cm",
+    "year": 2025
+  },
+  {
+    "id": "10",
+    "title": "合",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/IMG_3426.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Sam Taylor",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": 4.7,
+    "year": 2025
+  },
+  {
+    "id": "12",
+    "title": "伴",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/EB71F055-E639-48A2-9D60-5BBB1DE4707F.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Joan Chen",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": "5F",
+    "year": 2024
+  },
+  {
+    "id": "15",
+    "title": "冬",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/476E07E8-4CC9-4D88-B5D3-AB784BC2FD66.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Sam Taylor",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": "8P",
+    "year": 2020
+  },
+  {
+    "id": "16",
+    "title": "好柿花生",
+    "description": "Quiet cottage with private lake access",
+    "paintingType": "OilPaints",
+    "location": {
+      "address": "321 Lakeview Dr",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "coordinates": { "lat": 39.0968, "lng": -120.0324 }
+    },
+    "price": 300,
+    "maxGuests": 6,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "amenities": ["WiFi", "Boating", "Fireplace"],
+    "images": ["./resources/painting/IMG_3425.jpg"],
+    "author": {
+      "id": "h3",
+      "name": "Sam Taylor",
+      "avatar": "",
+      "joinedDate": "2021-11-20",
+      "isSuperhost": false
+    },
+    "rating": 4.7,
+    "year": 2025
+  }
+]

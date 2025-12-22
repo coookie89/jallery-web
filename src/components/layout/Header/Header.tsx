@@ -45,19 +45,21 @@ const Header: React.FC = () => {
           </Link> */}
 
           {/* Logo text: visible when on other pages OR when the home hero is scrolled to bottom */}
-          <Link
-            to="/"
-            className={`pointer-events-auto transition-opacity duration-300 ${
-              location.pathname !== '/' || isAtBottom ? 'opacity-100' : 'opacity-0'
-            }`}
-            aria-hidden={location.pathname === '/' && !isAtBottom}
-          >
-            <span className="text-2xl font-medium text-black">程瓊慧 Joan Chen</span>
-          </Link>
+          <nav className="md:flex items-center space-x-2">
+            <Link
+              to="/"
+              className={`pointer-events-auto transition-opacity duration-300 ${
+                location.pathname !== '/' || isAtBottom ? 'opacity-100' : 'opacity-0'
+              } bg-red px-4 py-3 hover:bg-white transition duration-800 hover:cursor-pointer rounded-full`}
+              aria-hidden={location.pathname === '/' && !isAtBottom}
+            >
+              <span>程瓊慧 Joan Chen</span>
+            </Link>
+          </nav>
 
           {/* Navigation */}
           <nav className="md:flex items-center space-x-2">
-            <Link to="/contact" className='bg-red px-3 py-2 hover:bg-white transition duration-800 hover:cursor-pointer rounded-sm'>
+            <Link to="/contact" className='bg-red px-4 py-3 hover:bg-white transition duration-800 hover:cursor-pointer rounded-sm'>
                 Contact
             </Link>
           </nav>

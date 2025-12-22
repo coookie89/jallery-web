@@ -40,7 +40,7 @@ const SearchResults: React.FC = () => {
           isSuperhost: true
         },
         rating: 4.8,
-        reviewCount: 120
+        year: 120
       },
       {
         id: '2',
@@ -67,7 +67,7 @@ const SearchResults: React.FC = () => {
           isSuperhost: false
         },
         rating: 4.9,
-        reviewCount: 85
+        year: 85
       }
     ];
 

@@ -22,9 +22,12 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, vertical = false }) 
 
   return (
     // Card switches between column (default) and row when not vertical.
+    // <Card
+    //   onClick={handleClick}
+    //   className={`h-full overflow-hidden border border-black hover:bg-gray-300 duration-300 flex flex-col ${vertical ? 'sm:flex-row lg:flex-row' : ''}`}
+    // >
     <Card
-      onClick={handleClick}
-      className={`h-full overflow-hidden border border-black hover:bg-gray-300 duration-300 flex flex-col ${vertical ? 'sm:flex-row lg:flex-row' : ''}`}
+      className={`h-full overflow-hidden border border-black duration-300 flex flex-col ${vertical ? 'sm:flex-row lg:flex-row' : ''}`}
     >
       {/* Image */}
       <div className={`bg-gray-100 overflow-hidden items-center justify-center w-full ${vertical ? 'sm:w-1/2 lg:w-1/2 ' : ''}`}>
@@ -33,6 +36,7 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, vertical = false }) 
             src={listing.images[0]}
             alt={listing.title}
             className="w-full h-auto object-contain"
+            loading='lazy'
           />
         ) : (
           <div className="w-full h-full items-center justify-center text-black">
@@ -55,19 +59,20 @@ const ListingCard: React.FC<ListingCardProps> = ({ listing, vertical = false }) 
           </div>
 
           <p className="text-black text-md mt-2 tracking-tight">
-            {listing.description}
+            {/* {listing.description} */}
+            {listing.paintingType}
           </p>
 
           <p className="text-black text-sm mt-2 tracking-tight">
-            {listing.paintingType} · {listing.location.city}, {listing.location.country}
+            {listing.location.city}, {listing.location.country} · {listing.year}
           </p>
         </div>
 
-        <div className="flex justify-between items-center text-black text-sm mt-4">
+        {/* <div className="flex justify-between items-center text-black text-sm mt-4">
           <div>
             <span className="text-gray-600 uppercase text-xs">Read more</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </Card>
   );

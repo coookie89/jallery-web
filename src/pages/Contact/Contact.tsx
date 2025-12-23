@@ -2,17 +2,36 @@ import React, { useState } from 'react';
 
 const Home: React.FC = () => {
   const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [emailError, setEmailError] = useState<string | null>(null);
+  const [lastNameError, setLastNameError] = useState<string | null>(null);
+  const [firstNameError, setFirstNameError] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email.trim()) {
-      setEmailError('Please fill out this field.');
+
+    if (!email.trim() || !firstName.trim() || !lastName.trim()) {
+      if (!email.trim()) {
+        setEmailError('Please fill out this field.');
+      }
+
+      if (!firstName.trim()) {
+        setFirstNameError('Please fill out this field.');
+      }
+
+      if (!lastName.trim()) {
+        setLastNameError('Please fill out this field.');
+      }
       return;
     }
-
+    
     setEmailError(null);
     setEmail('');
+    setFirstNameError(null);
+    setFirstName('');
+    setLastNameError(null);
+    setLastName('');
   };
 
   return (
@@ -46,12 +65,23 @@ const Home: React.FC = () => {
                   <span className="text-red text-xs italic">*</span>
                 </label>
                 <input
-                  required
-                  className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
+                  value={firstName}
+                  onChange={(ev) => {
+                    setFirstName(ev.target.value);
+                    if (firstNameError) setFirstNameError(null);
+                  }}
+                  className={`block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black ${firstNameError ? 'border-red' : 'border-black'}`}
                   id="grid-first-name"
                   type="text"
                   placeholder="Iris"
+                  aria-invalid={firstNameError ? 'true' : 'false'}
+                  aria-describedby={firstNameError ? 'grid-firstname-error' : undefined}
                 />
+                {firstNameError && (
+                  <p id="grid-firstname-error" className="text-red text-sm italic">
+                    Please fill out this field.
+                  </p>
+                )}
               </div>
               <div className="w-full md:w-1/2 px-3">
                 <label
@@ -62,12 +92,23 @@ const Home: React.FC = () => {
                   <span className="text-red text-xs italic">*</span>
                 </label>
                 <input
-                  required
-                  className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
+                  value={lastName}
+                  onChange={(ev) => {
+                    setLastName(ev.target.value);
+                    if (lastNameError) setLastNameError(null);
+                  }}
+                  className={`block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black ${lastNameError ? 'border-red' : 'border-black'}`}
                   id="grid-last-name"
                   type="text"
                   placeholder="Yang"
+                  aria-invalid={lastNameError ? 'true' : 'false'}
+                  aria-describedby={lastNameError ? 'grid-lastname-error' : undefined}
                 />
+                {lastNameError && (
+                  <p id="grid-lastname-error" className="text-red text-sm italic">
+                    Please fill out this field.
+                  </p>
+                )}
               </div>
             </div>
 

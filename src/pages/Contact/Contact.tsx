@@ -39,7 +39,7 @@ const Home: React.FC = () => {
         {/* Image */}
         <div className="w-full flex justify-center items-center max-w-md md:w-1/2 mb-8 md:mb-0 px-10">
           <img
-            src="./resources/profile.png"
+            src="./resources/img/profile.png"
             alt="Contact Us"
             className="w-full h-auto object-contain mx-8"
           />

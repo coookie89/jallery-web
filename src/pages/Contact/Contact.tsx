@@ -1,15 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 
 const Home: React.FC = () => {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [contactNumber, setContactNumber] = useState('');
+  const [details, setDetails] = useState('');
   const [emailError, setEmailError] = useState<string | null>(null);
   const [lastNameError, setLastNameError] = useState<string | null>(null);
   const [firstNameError, setFirstNameError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const EMAILJS_PUBLIC_KEY = 'B1ylgb-7LHOvuP7vn';
+  const SERVICE_ID = 'service_rd5aab7';
+  const TEMPLATE_ID = 'template_k521fik';
+
+  useEffect(() => {
+    // Initialize EmailJS with your public key
+    // Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSuccessMessage(null);
+    setErrorMessage(null);
 
     if (!email.trim() || !firstName.trim() || !lastName.trim()) {
       if (!email.trim()) {
@@ -26,12 +44,39 @@ const Home: React.FC = () => {
       return;
     }
     
+    // Clear errors
     setEmailError(null);
-    setEmail('');
     setFirstNameError(null);
-    setFirstName('');
     setLastNameError(null);
-    setLastName('');
+
+    // Send email via EmailJS
+    setIsLoading(true);
+    const templateParams = {
+      to_email: 'oh_joan@yahoo.com.tw',
+      from_name: `${firstName} ${lastName}`,
+      from_email: email,
+      contact_number: contactNumber,
+      message: details,
+    };
+
+    emailjs
+      .send(SERVICE_ID, TEMPLATE_ID, templateParams)
+      .then(
+        () => {
+          setSuccessMessage('Email已經成功地發送給Joan！謝謝您的提交。');
+          setEmail('');
+          setFirstName('');
+          setLastName('');
+          setContactNumber('');
+          setDetails('');
+          setIsLoading(false);
+        },
+        (error) => {
+          console.error('Error:', error);
+          setErrorMessage('郵件發送失敗 :( 請稍後再試。');
+          setIsLoading(false);
+        }
+      );
   };
 
   return (
@@ -152,6 +197,8 @@ const Home: React.FC = () => {
                   Contact number
                 </label>
                 <input
+                  value={contactNumber}
+                  onChange={(ev) => setContactNumber(ev.target.value)}
                   className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
                   id="grid-contact-number"
                   type="text"
@@ -199,6 +246,8 @@ const Home: React.FC = () => {
                   Details
                 </label>
                 <textarea
+                  value={details}
+                  onChange={(ev) => setDetails(ev.target.value)}
                   className="block w-full text-gray-700 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 border border-black"
                   id="grid-details"
                   placeholder="Enter your details here..."
@@ -206,11 +255,22 @@ const Home: React.FC = () => {
               </div>
             </div>
 
+            {successMessage && (
+              <div className="mb-4 p-3 bg-green-100 border border-green-400 text-green-700 rounded">
+                {successMessage}
+              </div>
+            )}
+            {errorMessage && (
+              <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+                {errorMessage}
+              </div>
+            )}
             <button
-              className="bg-black text-white py-3 px-4 w-full hover:bg-gray-700 transition duration-300"
+              className="bg-black text-white py-3 px-4 w-full hover:bg-gray-700 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               type="submit"
+              disabled={isLoading}
             >
-              Submit
+              {isLoading ? 'Sending...' : 'Submit'}
             </button>
           </form>
         </div>
